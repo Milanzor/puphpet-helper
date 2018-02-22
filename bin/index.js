@@ -28,4 +28,7 @@ questions().then(answers => {
 
     // Go
     install(create(answers));
+
+    // Done!
+    console.log(`Cool, all done!`);
 });
