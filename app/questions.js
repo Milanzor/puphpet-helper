@@ -31,6 +31,12 @@ const questionList = [
         filter: function (val) {
             return val.toLowerCase();
         }
+    },
+    {
+        type: 'confirm',
+        name: 'happy',
+        message: 'Are you happy and ready to go?',
+        default: true
     }
 ];
 

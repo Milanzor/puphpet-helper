@@ -18,4 +18,14 @@ const create = require('../app/create');
 const install = require('../app/install');
 
 // Launch
-questions().then(answers => install(create(answers)));
+questions().then(answers => {
+
+    // Only go if youre happy
+    if (!answers.happy) {
+        console.log(`Oh, try again I guess :)`);
+        process.exit(0);
+    }
+
+    // Go
+    install(create(answers));
+});
