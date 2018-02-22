@@ -1,3 +1,4 @@
+# START VHOST BY PUPHPET HELPER #
 apache:
     vhosts:
         av_{vhostuniq}:
@@ -18,3 +19,4 @@ apache:
                         - 'all granted'
                     custom_fragment: ''
                     provider: directory
+# END VHOST BY PUPHPET HELPER #
