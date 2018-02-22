@@ -1,0 +1,20 @@
+apache:
+    vhosts:
+        av_{vhostuniq}:
+            servername: {vhostservername}
+            docroot: {vhostdocroot}
+            port: '{vhostport}'
+            directories:
+                avd_{directoryuniq}:
+                    path: {vhostdocroot}
+                    directoryindex: index.php
+                    options:
+                        - Indexes
+                        - FollowSymlinks
+                        - MultiViews
+                    allow_override:
+                        - All
+                    require:
+                        - 'all granted'
+                    custom_fragment: ''
+                    provider: directory
