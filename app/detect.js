@@ -13,7 +13,7 @@ const appPaths = require('./paths');
 const detect = function () {
 
     // Make sure we have a puphpet/config-custom.yaml
-    if (!fs.readFileSync(appPaths.config)) {
+    if (!fs.existsSync(appPaths.config)) {
         console.log(`No puphpet/config-custom.yaml found, are you in the right folder?`);
         process.exit(0);
     }
