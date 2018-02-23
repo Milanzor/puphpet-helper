@@ -1,7 +1,7 @@
 {
     "name": "puphpet-helper",
     "version": "1.2.2",
-    "description": "Command line tool to add vhosts and mysql db's in PuPHPet Vagrant boxes",
+    "description": "Command line tool to add apache vhosts in PuPHPet Vagrant boxes",
     "main": "bin/index.js",
     "repository": "git@github.com:Milanzor/puphpet-helper.git",
     "author": "Milan van As <milanvanas@gmail.com>",
