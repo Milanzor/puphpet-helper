@@ -12,9 +12,9 @@ const appPaths = require('./paths');
  */
 const detect = function () {
 
-    // Make sure we have a puphpet/config-custom.yaml
-    if (!fs.readFileSync(appPaths.config)) {
-        console.log(`No puphpet/config-custom.yaml found, are you in the right folder?`);
+    // Make sure we have a puphpet folder
+    if (!fs.existsSync(appPaths.puphpetFolder)) {
+        console.log(`No puphpet folder found, are you sure you're in a PuPHPet+Vagrant directory?`);
         process.exit(0);
     }
 

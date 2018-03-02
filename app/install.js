@@ -11,7 +11,7 @@ const appPaths = require('./paths');
  */
 const install = function (vhost) {
 
-    fs.appendFileSync(appPaths.config, '\n' + vhost);
+    fs.appendFileSync(appPaths.customConfig, '\n' + vhost);
 };
 
 module.exports = install;
