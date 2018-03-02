@@ -19,4 +19,8 @@ apache:
                         - 'all granted'
                     custom_fragment: ''
                     provider: directory
+                avd_{directoryuniq}:
+                    provider: filesmatch
+                    path: \.php$
+                    sethandler: 'proxy:fcgi://127.0.0.1:9000'
 # END VHOST BY PUPHPET HELPER #
