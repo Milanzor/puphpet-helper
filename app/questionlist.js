@@ -1,13 +1,7 @@
-/**
- * Handles the questions for the config
- */
-
-const inquirer = require('inquirer');
-
-const questionList = [
+module.exports = [
     {
         type: 'input',
-        name: 'vhostservername',
+        name: 'servername',
         message: 'Domain?',
         default: 'example.local',
         filter: function (val) {
@@ -16,16 +10,18 @@ const questionList = [
     },
     {
         type: 'input',
-        name: 'vhostdocroot',
+        name: 'docroot',
         message: 'Document root?',
-        default: '/var/www/example.local/public_html',
+        default: function (response) {
+            return `/var/www/${response.servername}/public_html`;
+        },
         filter: function (val) {
             return val.toLowerCase();
         }
     },
     {
         type: 'input',
-        name: 'vhostport',
+        name: 'port',
         message: 'Port?',
         default: '80',
         filter: function (val) {
@@ -39,13 +35,3 @@ const questionList = [
         default: true
     }
 ];
-
-
-/**
- * The question
- */
-const questions = function () {
-    return inquirer.prompt(questionList);
-};
-
-module.exports = questions;
