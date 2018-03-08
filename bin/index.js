@@ -118,6 +118,29 @@ class PuphpetHelper {
     writeConfig() {
         const yamlString = yaml.stringify(this.puphpetCustomConfig, Infinity, 4);
         fs.writeFileSync(appPaths.customConfig, yamlString);
+
+        console.log('');
+        console.log('Awesome, all done!');
+
+        this.hostfile();
+    }
+
+    hostfile() {
+        try {
+            let vmName = Object.keys(this.puphpetConfig.vagrantfile.vm.provider.local.machines)[0];
+            let ip = this.puphpetConfig.vagrantfile.vm.provider.local.machines[vmName].network.private_network;
+            if (ip) {
+                console.log('');
+                console.log('Here\'s the command to add this new vhost to your host file:');
+                console.log('');
+                console.log(`echo -en "\\n# Added by puphpet-helper \\n${ip} ${this.answers.servername}\\n" | sudo tee -a /etc/hosts > /dev/null`);
+                console.log('');
+
+            }
+        } catch (e) {
+
+        }
+
     }
 
 
